@@ -1,0 +1,5 @@
+# Routes
+# ~~~~
+
+GET        /tweets                          controllers.Application.tweets
+GET        /tweets/since/:sinceId           controllers.Application.tweetsSince(sinceId: Long)

@@ -1,0 +1,1 @@
+web: target/universal/stage/bin/play-twitter-search -Dhttp.port=$PORT
