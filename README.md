@@ -5,7 +5,16 @@ A Play project to search tweets using twitter4j.
 
 Cross domains requests are allowed, by default.
 
-# Configuration
+## Configuration
+
+Configure twitter4j via [System properties](http://twitter4j.org/en/configuration.html)
+
+```
+-Dtwitter4j.oauth.consumerKey=*********************
+-Dtwitter4j.oauth.consumerSecret=******************************************
+-Dtwitter4j.oauth.accessToken=**************************************************
+-Dtwitter4j.oauth.accessTokenSecret=******************************************
+```
 
 Change the `conf/application.conf` file according to your needs:
 
@@ -34,12 +43,12 @@ _optional_
 
 The text to search in the tweet text
 
-# Endpoints
+## Endpoints
 
 * `GET /tweets`
 * `GET /tweets/since/:id`
 
-# Tweet example
+## Tweet example
 
 ```json
 {
