@@ -21,5 +21,6 @@ jacoco.excludes        in jacoco.Config := Seq("views*", "*Routes*", "controller
 
 libraryDependencies ++= Seq(
   "org.twitter4j" % "twitter4j-core" % "4.0.2",
+  "com.kenshoo" %% "metrics-play" % "2.3.0_0.1.6",
   cache
 )
