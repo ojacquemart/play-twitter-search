@@ -1,5 +1,8 @@
 # Routes
 # ~~~~
 
-GET        /tweets                          controllers.Application.tweets
-GET        /tweets/since/:sinceId           controllers.Application.tweetsSince(sinceId: Long)
+GET        /tweets                       controllers.Application.tweets
+GET        /tweets/since/:sinceId        controllers.Application.tweetsSince(sinceId: Long)
+
+# Metrics
+GET        /admin/metrics                com.kenshoo.play.metrics.MetricsController.metrics
