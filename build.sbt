@@ -5,7 +5,13 @@ name := """play-twitter-search"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.1" cross CrossVersion.full)
+
+lazy val macros = project
+
+lazy val root = (project in file("."))
+  .enablePlugins(PlayScala)
+  .dependsOn(macros)
 
 scalaVersion := "2.11.1"
 

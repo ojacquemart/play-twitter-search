@@ -5,6 +5,8 @@ import twitter4j.Status
 import play.api.Play.current
 import play.api.cache.Cache
 
+import macros._
+
 class KeywordTweetReader(reader: TweetReader) {
 
   import KeywordTweetReader.uniqueAndSortedByCreated
@@ -33,6 +35,7 @@ object KeywordTweetReader {
   val keyCache = "tweets"
 
   val reader = new KeywordTweetReader(TweetReader.reader)
+
 
   def getCachedTweets() = {
     Cache.getOrElse[List[Status]](keyCache, TwitterConfig.cacheTtlInSeconds) {
