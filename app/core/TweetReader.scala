@@ -59,7 +59,7 @@ object TweetReader {
 
   val twitterBaseUrl = "https://twitter.com"
   val canMatchText = TwitterConfig.matchText.isDefined
-  val matchText = TwitterConfig.matchText
+  val matchText = if (canMatchText) TwitterConfig.matchText.get else ""
 
   val twitterSingleton = TwitterFactory.getSingleton
   val reader = new TweetReader(twitterSingleton)
@@ -68,7 +68,7 @@ object TweetReader {
 
   def matches(text: String) = {
     if (!canMatchText) false
-    else text.contains(matchText.get)
+    else text.matches(matchText)
   }
 
   implicit val statusWrites = new Writes[Status] {
