@@ -76,7 +76,7 @@ object TweetReader {
       val user = status.getUser
 
       Json.obj(
-        "id" -> status.getId,
+        "id" -> status.getId.toString,
         "createdAt" -> status.getCreatedAt,
         "url" -> s"${twitterBaseUrl}/${user.getScreenName}/status/${status.getId}",
         "text" -> status.getText,
